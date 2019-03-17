@@ -21,6 +21,7 @@
     <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
         <!-- Avatar image in top left corner -->
 
+  <img src="images/darts.jpg" style="width:100%"/>
 
         <a href="Admin_Home.aspx" class="w3-bar-item w3-button w3-padding-large w3-black">
             <span class="glyphicon glyphicon-home fa-4x"></span>
@@ -44,7 +45,7 @@
     <div class="w3-padding-large" id="main">
         <!-- Header/Home -->
         <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-            <h1 class="w3-jumbo"><span class="w3-hide-small">Add</span></h1>
+            <h1 class="w3-jumbo"><span class="w3-hide-small">Faculty</span></h1>
         </header>
 
         <!--add-->
@@ -53,27 +54,8 @@
             <table>
 
                 <tr>
-                    <td>
-                        <asp:Label runat="server" ID="lbCourse" Text="Select Course: "></asp:Label>
-                    </td>
-                    <td>
-                        <asp:DropDownList runat="server" ID="drpCourse" Class="tb1"></asp:DropDownList>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label runat="server" ID="Label1" Text="Select Sem: "></asp:Label>
-                    </td>
-                    <td>
-                        <asp:DropDownList runat="server" ID="drpSem" Class="tb1"></asp:DropDownList>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label runat="server" ID="Label2" Text="Select Subject: "></asp:Label>
-                    </td>
-                    <td>
-                        <asp:DropDownList runat="server" ID="drpSubject" Class="tb1"></asp:DropDownList>
+                    <td colspan="3">
+                        <h4>Add new faculty</h4>
                     </td>
                 </tr>
                 <tr>
@@ -104,12 +86,60 @@
                 <tr>
                     <td></td>
                     <td>
-                        <asp:Button ID="Button1" runat="server" Text="Add" class="button button2" OnClick="Button1_Click" />
+                        <asp:Button ID="Button1" runat="server" Text="Add Faculty" class="button button2" OnClick="Button1_Click" />
                     </td>
                 </tr>
 
             </table>
 
+            <table>
+
+                <tr>
+                    <td colspan="3">
+                        <h4>Link Faculty and subject</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label runat="server" ID="lbCourse" Text="Select Course: "></asp:Label>
+                    </td>
+                    <td>
+                        <asp:DropDownList runat="server" ID="drpCourse" Class="tb1" OnSelectedIndexChanged="drpCourse_SelectedIndexChanged" AutoPostBack="true" OnLoad="drpCourse_SelectedIndexChanged"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label runat="server" ID="Label1" Text="Select Sem: "></asp:Label>
+                    </td>
+                    <td>
+                        <asp:DropDownList runat="server" ID="drpSem" Class="tb1" OnLoad="drpSem_SelectedIndexChanged" AutoPostBack="true" OnSelectedIndexChanged="drpSem_SelectedIndexChanged"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label runat="server" ID="Label2" Text="Select Subject: "></asp:Label>
+                    </td>
+                    <td>
+                        <asp:DropDownList runat="server" ID="drpSubject" Class="tb1" AutoPostBack="True"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label runat="server" ID="Label9" Text="Select Faculty: "></asp:Label>
+                    </td>
+                    <td>
+                        <asp:DropDownList runat="server" ID="drpSelect" Class="tb1"></asp:DropDownList>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td>
+                        <asp:Button ID="linkFacSubj" runat="server" Text="Link" class="button button2" OnClick="linkFacSubj_Click" />
+                    </td>
+                </tr>
+
+            </table>
         </form>
 </body>
 </html>

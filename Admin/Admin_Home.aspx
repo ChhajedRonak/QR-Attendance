@@ -21,7 +21,7 @@
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
   
-  
+  <img src="images/darts.jpg" style="width:100%"/>
   <a href="Admin_Home.aspx" class="w3-bar-item w3-button w3-padding-large w3-black">
      <span  class="glyphicon glyphicon-home fa-4x" ></span>
     <p>HOME</p>
@@ -43,6 +43,7 @@
     <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+
     <h1 class="w3-jumbo"><span class="w3-hide-small">Welcome</span> Admin.</h1>
     
   </header>
@@ -52,7 +53,7 @@
     <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
     
-    <p class="w3-medium" style="width : max-content; margin:auto;">&copy; Copyright. Darts .inc </p>
+    <p class="w3-medium" style="width : 80%; margin:auto; bottom:0 ; position:absolute; text-align:center;">&copy; Copyright. Darts .inc </p>
   <!-- End footer -->
   </footer>
 

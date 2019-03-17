@@ -20,9 +20,11 @@ public partial class Course : System.Web.UI.Page
         con = new MySqlConnection(constr);
        /* try
         {*/
+        if (!IsPostBack)
+        {
             con.Open();
             dt = new DataTable();
-            cmd = new MySqlCommand("select c_name from course;",con);
+            cmd = new MySqlCommand("select c_name from course;", con);
             //MySqlDataAdapter adp = new MySqlDataAdapter();
             MySqlDataReader reader = cmd.ExecuteReader();
             //adp.SelectCommand = cmd;
@@ -30,22 +32,32 @@ public partial class Course : System.Web.UI.Page
 
             //dt.Load(reader);
 
-        //    drpCourse.DataSource = dt;
+            //    drpCourse.DataSource = dt;
             drpCourse.Items.Clear();
-        while (reader.Read())
-        {
+
+            while (reader.Read())
+            {
+
+                drpCourse.Items.Add(reader.GetString(0));
+                //Response.Write("<script>alert('" + reader.GetString(0) + "')</script>");
+
+            }
+
+            //foreach (var item in drpCourse.Items)
+            //{
+            //    Response.Write("<script>alert('" + item + "')</script>");
+
+            //}
+
+            //con.Close();
+            reader.Close();
+
+            /* }
+             catch {
+                 Response.Write("<script>alert('Something went wrong.')</script>");
             
-            drpCourse.Items.Add(reader.GetString(0));
+             }*/
         }
-
-        //con.Close();
-        reader.Close();
-
-       /* }
-        catch {
-            Response.Write("<script>alert('Something went wrong.')</script>");
-            
-        }*/
 
     }
     protected void Button1_Click(object sender, EventArgs e)
@@ -60,7 +72,10 @@ public partial class Course : System.Web.UI.Page
             string queryStr = "insert into course(c_name) values('" + course + "');";
             try
             {
-                //con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
                 cmd = new MySqlCommand(queryStr, con);
                 if (cmd.ExecuteNonQuery() == 1)
                 {
@@ -71,9 +86,9 @@ public partial class Course : System.Web.UI.Page
                     Response.Write("<script>alert('Course add failed')</script>");
                 }
             }
-            catch
+            catch(Exception e1)
             {
-                Response.Write("<script>alert('Something went wrong.')</script>");
+                Response.Write("<script>alert('Something went wrong."+e1.Message+"')</script>");
             }
             con.Close();
             Page_Load(sender, e);
@@ -90,16 +105,21 @@ public partial class Course : System.Web.UI.Page
         }
         else
         {
-            int cid = drpCourse.SelectedIndex+1;
-            string queryStr = "insert into subject(sub_name,sem,c_id) values('" + subject + "','"+sem+"',"+cid+");";
+            string cname = drpCourse.SelectedValue;
+            string queryStr = "insert into subject(sub_name,sem,c_name) values('" + subject + "','"+sem+"','"+cname+"');";
             try
             {
                 //con.Close();
-
+                if (con.State == ConnectionState.Closed) {
+                    con.Open();
+                }
                 cmd = new MySqlCommand(queryStr, con);
                 if (cmd.ExecuteNonQuery() == 1)
                 {
                     Response.Write("<script>alert('Subject added successfully')</script>");
+                    txtCourse.Text = "";
+                    txtSubject.Text = "";
+                    txtSem.Text = "";
                 }
                 else
                 {
@@ -111,9 +131,13 @@ public partial class Course : System.Web.UI.Page
                 Response.Write("<script>alert('Something went wrong."+e1.Message+"')</script>");
             }
             con.Close();
-            Page_Load(sender, e);
+           // Page_Load(sender, e);
            
         }
+
+    }
+    protected void btnEditCourse_Click(object sender, EventArgs e)
+    {
 
     }
 }
