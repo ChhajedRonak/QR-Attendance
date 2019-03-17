@@ -41,4 +41,5 @@ The student will have to scan the QR Code using the android application to mark 
 The student will scan the QR Code displayed by the faculty and automatically his.her attendance will be marked for the lecture.
 <br>
 <i>Screenshots</i>
+<br>
 <img src="Screenshots/android.jpeg"/>
