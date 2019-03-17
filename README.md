@@ -20,3 +20,25 @@ Lets you:
 <img src="Screenshots/WhatsApp Image 2019-03-17 at 12.16.09 PM.jpeg"/>
 <img src="Screenshots/WhatsApp Image 2019-03-17 at 12.17.02 PM.jpeg"/>
 <img src="Screenshots/WhatsApp Image 2019-03-17 at 12.17.10 PM.jpeg"/>
+
+
+**Faculty Module**
+<br>
+The faculty will select the subject.
+Accoring to the systems current time the slot for the lecture will be selected automatically.
+The generate button will generate a new QR Code which will than be refreshed in every 5 seconds.
+The student will have to scan the QR Code using the android application to mark his/her attendance.
+
+<br>
+<i>Screenshots</i>
+<img src="Screenshots/teacher_module1.jpeg"/>
+<img src="Screenshots/teacher_module2.jpeg"/>
+<img src="Screenshots/teacher_module3.jpeg"/>
+<img src="Screenshots/teacher_module4.jpeg"/>
+
+**Android App**
+<br>
+The student will scan the QR Code displayed by the faculty and automatically his.her attendance will be marked for the lecture.
+<br>
+<i>Screenshots</i>
+<img src="Screenshots/android.jpeg"/>
