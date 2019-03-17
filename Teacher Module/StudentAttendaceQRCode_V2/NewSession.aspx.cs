@@ -35,27 +35,27 @@ namespace StudentAttendaceQRCode_V2
             
             if(time.Hour >= 16 && time.Minute>= 00)
             {
-                txt_timeslot.Text = "04:00 PM - 05:20 PM";
+                txt_timeslot.Text = "04:00PM-05:20PM";
             }
             else if (time.Hour >= 14 && time.Minute >= 30)
             {
-                txt_timeslot.Text = "02:30 PM - 4:00 PM";
+                txt_timeslot.Text = "02:30PM-4:00PM";
             }
             else if (time.Hour >= 13 && time.Minute >= 00 )
             {
-                txt_timeslot.Text = "01:00 PM - 2:30 PM";
+                txt_timeslot.Text = "01:00PM-2:30PM";
             }
             else if (time.Hour >= 12 && time.Minute >= 00)
             {
-                txt_timeslot.Text = "LUNCH BREAK";
+                txt_timeslot.Text = "LUNCH-BREAK";
             }
             else if (time.Hour >= 10 && time.Minute >= 30)
             {
-                txt_timeslot.Text = "10:30 PM - 12:00 PM";
+                txt_timeslot.Text = "10:30PM-12:00PM";
             }
             else if (time.Hour >= 09 && time.Minute >= 00)
             {
-                txt_timeslot.Text = "09:00 PM - 10:30 PM";
+                txt_timeslot.Text = "09:00PM-10:30PM";
             }
             
         }

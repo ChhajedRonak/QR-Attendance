@@ -5,66 +5,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="LoginFormCSS.css" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            height: 76px;
-        }
-        .auto-style5 {
-            width: 476px;
-            height: 76px;
-        }
-        .auto-style6 {
-            left: 1px;
-            top: -1px;
-            height: 322px;
-            width: 421px;
-        }
-        .auto-style7 {
-            height: 54px;
-            text-align: justify;
-        }
-        .auto-style8 {
-            height: 54px;
-            text-align: left;
-            width: 476px;
-        }
-        .auto-style9 {
-            height: 35px;
-            text-align: justify;
-        }
-        .auto-style10 {
-            height: 35px;
-            text-align: left;
-            width: 476px;
-        }
-    </style>
+    <link href="App_Themes/LoginForm.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
 </head>
 <body align="center" >
     <div id="bg"></div>
+    <br />
+    <br />
+    <br />
     <form id="form1" runat="server" class="auto-style6"  align="center" method="post">
-        <asp:Label ID="Label1" runat="server" Text="LOGIN" ForeColor="White" Font-Bold="True" Font-Names="Franklin Gothic Heavy" Font-Size="XX-Large"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Login" ForeColor="White" Font-Bold="True" Font-Names="Comic Sans MS" Font-Size="XX-Large"></asp:Label>
+        <br />
+        <br />
         <div class="imgcontainer">
-            <img src="Images/ABC.png" alt="Avatar" class="avatar"/>
+            <span class="glyphicon glyphicon-user fa-4x"></span> 
         </div>
+        <br />
+        <br />
+
         <div class="container">
-            <table>  
+            <table align="center">  
                 <tr>  
-                    <td class="auto-style9" style="font-size: x-large; font-weight: 200; font-style: normal; font-family: 'Arial Black'"> Username: </td>  
+                    <td  style="font-size: x-large; font-weight: 200; font-style: normal; font-family: 'Georgia'"> Username: &nbsp; &nbsp; &nbsp;</td>  
                     <td class="auto-style10">  
-                        <asp:TextBox ID="txt_username" runat="server" TextMode="Email" Width="231px" BackColor="#CCCCCC" ForeColor="White" />  
+                        <asp:TextBox class="tb1" ID="txt_username" runat="server" TextMode="Email" Width="231px" BackColor="#CCCCCC" ForeColor="black" />  
                         <asp:RequiredFieldValidator ID="rfvUser" ErrorMessage=" * Please enter Username" ControlToValidate="txt_username" runat="server" ForeColor="Red" /> </td>  
                 </tr>  
+                <tr>
+                    <td></td>
+                    <td></td>
+                      
+                </tr>
                 <tr>  
-                    <td class="auto-style7" style="font-size: x-large; font-weight: 200; font-style: normal; font-family: 'Arial Black'"> Password: </td>  
+                    <td style="font-size: x-large; font-style: normal; font-family: 'Georgia'"> Password: &nbsp; &nbsp;</td>  
                     <td class="auto-style8">  
-                        <asp:TextBox ID="txt_password" runat="server" TextMode="Password" Width="232px" BackColor="#CCCCCC" ForeColor="Black" />  
+                        <asp:TextBox class="tb1" ID="txt_password" runat="server" TextMode="Password" Width="232px" BackColor="#CCCCCC" ForeColor="Black" />  
                         <asp:RequiredFieldValidator ID="rfvPWD" runat="server" ControlToValidate="txt_password" ErrorMessage=" * Please enter Password" ForeColor="Red" /> </td>  
                 </tr>  
+                   <tr>
+                    <td></td>
+                    <td></td>                    
+                </tr>
                 <tr>  
-                    <td class="auto-style1"> </td>  
-                    <td class="auto-style5" align="center">  
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit"  OnClick="btnSubmit_Click" Width="225px" BackColor="Lime" BorderColor="#0066FF" BorderStyle="Solid" ForeColor="Black" Height="43px" /> </td>  
+                    
+                    <td colspan="2" class="auto-style5" align="center">  
+                        <asp:Button Class="button button1" ID="btnSubmit" runat="server" Text="Log in"  OnClick="btnSubmit_Click" /> </td>  
                 </tr>  
             </table>  
         </div>
@@ -79,6 +67,6 @@
             modal.style.display = "none";
         }
     }
-    </script
+    </script>
 </body>
 </html>

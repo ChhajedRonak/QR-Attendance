@@ -5,7 +5,7 @@ body {
     padding: 40px;
     color: white;
     font-family: "Open Sans Condensed", sans-serif;
-    
+    background-image: url('Images/homebg.jpg');
     align-content: center;
 }
 
@@ -15,7 +15,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url('Images/o-encryption-facebook.jpg');
+    background-image: url('Images/homebg.jpg');
     -webkit-filter: blur(8px);
 }
 
